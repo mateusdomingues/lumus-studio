@@ -13,15 +13,42 @@ export function SelectedStories() {
     const root = rootRef.current;
     if (!root) return;
     const context = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>(".story-entry").forEach((entry) => {
-        gsap.from(entry, {
-          y: 70,
-          autoAlpha: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: { trigger: entry, start: "top 83%", once: true },
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 900px) and (prefers-reduced-motion: no-preference)", () => {
+        gsap.utils.toArray<HTMLElement>(".story-entry").forEach((entry) => {
+          gsap.from(entry, {
+            y: 70,
+            autoAlpha: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: { trigger: entry, start: "top 83%", once: true },
+          });
         });
       });
+      mm.add("(max-width: 899px) and (prefers-reduced-motion: no-preference)", () => {
+        gsap.utils.toArray<HTMLElement>(".story-entry").forEach((entry, index) => {
+          const image = entry.querySelector<HTMLElement>(".story-entry__image");
+          const innerImage = image?.querySelector("img");
+          const metadata = entry.querySelector<HTMLElement>(".story-entry__meta");
+          const timeline = gsap.timeline({
+            scrollTrigger: { trigger: entry, start: "top 86%", once: true },
+          });
+
+          if (image) {
+            timeline.fromTo(
+              image,
+              { clipPath: index % 2 === 0 ? "inset(0 0 100% 0)" : "inset(0 100% 0 0)" },
+              { clipPath: "inset(0 0 0% 0)", duration: 1, ease: "power3.inOut" },
+            );
+          }
+          if (innerImage) {
+            timeline.fromTo(innerImage, { scale: 1.05 }, { scale: 1, duration: 1.15, ease: "power3.out" }, 0);
+          }
+          timeline.from(metadata, { y: 22, autoAlpha: 0, duration: 0.65, ease: "power2.out" }, "-=0.32");
+        });
+      });
+
+      return () => mm.revert();
     }, root);
     return () => context.revert();
   }, []);

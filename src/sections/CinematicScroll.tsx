@@ -22,7 +22,7 @@ export function CinematicScroll() {
 
     const context = gsap.context(() => {
       const mm = gsap.matchMedia();
-      mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
+      mm.add("(min-width: 900px) and (prefers-reduced-motion: no-preference)", () => {
         const timeline = gsap.timeline({
           scrollTrigger: { trigger: root, start: "top top", end: "+=280%", pin: true, scrub: 1.2 },
         });
@@ -35,6 +35,28 @@ export function CinematicScroll() {
           .to(frameRefs.current[2], { autoAlpha: 1, duration: 0.35 }, 1.95)
           .to(".cinematic__words span", { yPercent: 0, autoAlpha: 1, stagger: 0.08, duration: 0.55 }, 2.25);
       });
+      mm.add("(max-width: 899px) and (prefers-reduced-motion: no-preference)", () => {
+        gsap.set(frameRefs.current, { autoAlpha: 0 });
+        gsap.set(frameRefs.current[0], { autoAlpha: 1 });
+        gsap.set(".cinematic__words span", { yPercent: 45, autoAlpha: 0 });
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: root,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0.85,
+          },
+        })
+          .fromTo(scene, { scale: 0.88 }, { scale: 1, duration: 1.1, ease: "none" })
+          .to(frameRefs.current[0], { autoAlpha: 0, duration: 0.32 }, 0.75)
+          .to(frameRefs.current[1], { autoAlpha: 1, duration: 0.38 }, 0.75)
+          .to(frameRefs.current[1], { autoAlpha: 0, duration: 0.32 }, 1.55)
+          .to(frameRefs.current[2], { autoAlpha: 1, duration: 0.38 }, 1.55)
+          .to(".cinematic__words span", { yPercent: 0, autoAlpha: 1, stagger: 0.08, duration: 0.55 }, 1.85);
+      });
+
+      return () => mm.revert();
     }, root);
     return () => context.revert();
   }, []);
@@ -59,4 +81,3 @@ export function CinematicScroll() {
     </section>
   );
 }
-

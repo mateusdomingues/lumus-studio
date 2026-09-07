@@ -1122,10 +1122,10 @@ img {
   .brand-events__service:nth-child(odd) { margin-right: 0; }
   .brand-events__bottom .arrow-link { justify-self: start; margin-top: 2rem; }
 
-  .cinematic { height: auto; min-height: 100svh; padding: 5rem var(--page-gutter); }
-  .cinematic__scene { height: 76svh; transform: none; }
-  .cinematic__frame { display: none; }
-  .cinematic__frame:first-child { display: block; visibility: visible; opacity: 1; }
+  .cinematic { display: block; height: auto; min-height: 220svh; overflow: visible; padding: 12svh var(--page-gutter); }
+  .cinematic__scene { position: sticky; top: 12svh; height: 76svh; transform: none; }
+  .cinematic__frame { display: block; }
+  .cinematic__frame:first-child { visibility: visible; opacity: 1; }
   .cinematic__words { inset: auto 1.2rem 1.4rem; display: grid; font-size: clamp(3.5rem, 15vw, 5.5rem); }
   .cinematic__words span { visibility: visible; opacity: 1; transform: none; }
 

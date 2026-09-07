@@ -14,7 +14,7 @@ export function Approach() {
     if (!root) return;
     const context = gsap.context(() => {
       const mm = gsap.matchMedia();
-      mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
+      mm.add("(min-width: 900px) and (prefers-reduced-motion: no-preference)", () => {
         gsap.utils.toArray<HTMLElement>(".approach__step").forEach((step, index) => {
           gsap.timeline({
             scrollTrigger: {
@@ -27,6 +27,41 @@ export function Approach() {
           });
         });
       });
+      mm.add("(max-width: 899px) and (prefers-reduced-motion: no-preference)", () => {
+        gsap.from(".approach__header > *", {
+          y: 32,
+          autoAlpha: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: { trigger: ".approach__header", start: "top 84%", once: true },
+        });
+
+        gsap.utils.toArray<HTMLElement>(".approach__step").forEach((step) => {
+          const copy = Array.from(step.children).filter((child) => !child.classList.contains("approach__mobile-image"));
+          const image = step.querySelector<HTMLElement>(".approach__mobile-image");
+          const innerImage = image?.querySelector("img");
+          const timeline = gsap.timeline({
+            scrollTrigger: { trigger: step, start: "top 82%", once: true },
+          });
+
+          timeline.from(copy, {
+            y: 30,
+            autoAlpha: 0,
+            stagger: 0.09,
+            duration: 0.68,
+            ease: "power3.out",
+          });
+          if (image) {
+            timeline.fromTo(image, { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.95, ease: "power3.inOut" }, "-=0.24");
+          }
+          if (innerImage) {
+            timeline.fromTo(innerImage, { scale: 1.05 }, { scale: 1, duration: 1.1, ease: "power3.out" }, "<");
+          }
+        });
+      });
+
+      return () => mm.revert();
     }, root);
 
     function showImage(index: number) {

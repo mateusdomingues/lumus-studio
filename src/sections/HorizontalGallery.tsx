@@ -38,6 +38,31 @@ export function HorizontalGallery() {
           },
         });
       });
+      mm.add("(max-width: 899px) and (prefers-reduced-motion: no-preference)", () => {
+        gsap.from(".horizontal-gallery__intro > *", {
+          y: 34,
+          autoAlpha: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: { trigger: ".horizontal-gallery__intro", start: "top 84%", once: true },
+        });
+
+        gsap.utils.toArray<HTMLElement>(".horizontal-gallery__image").forEach((figure, index) => {
+          const image = figure.querySelector("img");
+          gsap.timeline({
+            scrollTrigger: { trigger: figure, start: "top 88%", once: true },
+          })
+            .fromTo(
+              figure,
+              { clipPath: index % 2 === 0 ? "inset(0 0 100% 0)" : "inset(0 100% 0 0)" },
+              { clipPath: "inset(0 0 0% 0)", duration: 1, ease: "power3.inOut" },
+            )
+            .fromTo(image, { scale: 1.055 }, { scale: 1, duration: 1.2, ease: "power3.out" }, 0);
+        });
+      });
+
+      return () => mm.revert();
     }, root);
     return () => context.revert();
   }, []);
