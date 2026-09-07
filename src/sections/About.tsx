@@ -35,7 +35,7 @@ export function About() {
         <Image src="/images/studio/backstage.jpg" alt="Equipe nos bastidores de um evento de moda" fill sizes="(max-width: 767px) 100vw, 65vw" style={{ objectFit: "cover" }} />
       </div>
       <div className="about__copy">
-        <p className="eyebrow">Studio</p>
+        <p className="eyebrow">Estúdio</p>
         <h2 id="about-title" className="display-type">A Lumus observa o que acontece — e o que quase passa despercebido.</h2>
         <p>
           Um estúdio visual dedicado a transformar eventos em memória, narrativa e conteúdo de marca. Presentes o suficiente para perceber; discretos o suficiente para não interromper.
@@ -44,4 +44,3 @@ export function About() {
     </section>
   );
 }
-

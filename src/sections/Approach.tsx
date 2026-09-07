@@ -47,7 +47,7 @@ export function Approach() {
   return (
     <section ref={rootRef} className="approach section-shell" aria-labelledby="approach-title">
       <header className="approach__header">
-        <p className="eyebrow">The Lumus approach</p>
+        <p className="eyebrow">O olhar Lumus</p>
         <h2 id="approach-title" className="display-type">Observar sem interromper.</h2>
       </header>
       <div className="approach__layout">
@@ -78,4 +78,3 @@ export function Approach() {
     </section>
   );
 }
-

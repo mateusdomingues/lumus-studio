@@ -512,22 +512,12 @@ img {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  gap: 1.2rem;
   padding: 0.55rem 0;
   border-bottom: 1px solid currentColor;
   font-size: 0.74rem;
   font-weight: 650;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-}
-
-.arrow-link__arrow {
-  transition: transform 300ms ease;
-}
-
-.arrow-link:hover .arrow-link__arrow,
-.arrow-link:focus-visible .arrow-link__arrow {
-  transform: translate(4px, -4px);
 }
 
 /* Brand events */
@@ -734,7 +724,7 @@ img {
 
 .events-index__list a {
   display: grid;
-  grid-template-columns: 3rem 1fr auto;
+  grid-template-columns: 3rem 1fr;
   align-items: baseline;
   padding: 1rem 0;
   border-bottom: 1px solid var(--line);
@@ -750,21 +740,9 @@ img {
   transition: transform 400ms ease;
 }
 
-.events-index__list i {
-  font-style: normal;
-  opacity: 0;
-  transition: opacity 300ms ease, transform 300ms ease;
-}
-
 .events-index__list a:hover strong,
 .events-index__list a:focus-visible strong {
   transform: translateX(0.18em);
-}
-
-.events-index__list a:hover i,
-.events-index__list a:focus-visible i {
-  opacity: 1;
-  transform: translate(3px, -3px);
 }
 
 .events-index__list a.is-primary {
@@ -1059,7 +1037,6 @@ img {
 
 .next-story .eyebrow { grid-column: 1 / 4; align-self: start; }
 .next-story strong { grid-column: 3 / 11; font-size: clamp(4rem, 8vw, 9rem); font-weight: 400; }
-.next-story > span:last-child { grid-column: 12; justify-self: end; font-size: 2rem; }
 
 @media (max-width: 899px) {
   :root {
@@ -1172,7 +1149,7 @@ img {
   .events-index__header { gap: 2.5rem; }
   .events-index__preview { display: none; }
   .events-index__list { grid-column: 1 / 5; }
-  .events-index__list a { grid-template-columns: 2rem 1fr auto; padding: 0.9rem 0; }
+  .events-index__list a { grid-template-columns: 2rem 1fr; padding: 0.9rem 0; }
   .events-index__list strong,
   .events-index__list a.is-primary strong { font-size: clamp(2.7rem, 12vw, 4rem); }
   .events-index__list a.is-primary { padding-block: 1.25rem; }
@@ -1215,7 +1192,6 @@ img {
   .next-story { min-height: 60svh; }
   .next-story .eyebrow { grid-column: 1 / 5; }
   .next-story strong { grid-column: 1 / 5; font-size: clamp(3.5rem, 15vw, 5.5rem); }
-  .next-story > span:last-child { grid-column: 4; }
 }
 
 @media (prefers-reduced-motion: reduce) {

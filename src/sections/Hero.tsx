@@ -126,7 +126,7 @@ export function Hero() {
           <i />
           <span>{String(heroSlides.length).padStart(2, "0")}</span>
         </div>
-        <span className="hero__scroll" aria-hidden="true">Scroll</span>
+        <span className="hero__scroll" aria-hidden="true">Role para explorar</span>
       </div>
     </section>
   );

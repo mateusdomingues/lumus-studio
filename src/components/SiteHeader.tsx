@@ -7,10 +7,10 @@ import { heroSlides } from "@/data/projects";
 import { gsap } from "@/lib/gsap";
 
 const menuItems = [
-  { number: "01", label: "Stories", href: "#stories", image: heroSlides[1] },
-  { number: "02", label: "Brand Events", href: "#brand-events", image: heroSlides[3] },
-  { number: "03", label: "Studio", href: "#studio", image: "/images/studio/on-set.jpg" },
-  { number: "04", label: "Contact", href: "#contact", image: heroSlides[5] },
+  { number: "01", label: "Histórias", href: "#stories", image: heroSlides[1] },
+  { number: "02", label: "Eventos de marca", href: "#brand-events", image: heroSlides[3] },
+  { number: "03", label: "Estúdio", href: "#studio", image: "/images/studio/on-set.jpg" },
+  { number: "04", label: "Contato", href: "#contact", image: heroSlides[5] },
 ];
 
 export function SiteHeader() {
@@ -132,9 +132,8 @@ export function SiteHeader() {
             </div>
           ))}
         </nav>
-        <p className="menu-overlay__footer">Photography × space × motion</p>
+        <p className="menu-overlay__footer">Fotografia × espaço × movimento</p>
       </div>
     </>
   );
 }
-

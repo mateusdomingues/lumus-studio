@@ -29,7 +29,7 @@ export function SelectedStories() {
   return (
     <section ref={rootRef} id="stories" className="stories section-shell" aria-labelledby="stories-title">
       <header className="section-heading">
-        <p className="eyebrow">Selected stories</p>
+        <p className="eyebrow">Histórias selecionadas</p>
         <h2 id="stories-title" className="display-type">Histórias escolhidas pelo que ainda fazem sentir.</h2>
       </header>
       <div className="stories__list">
@@ -43,7 +43,7 @@ export function SelectedStories() {
                 sizes={index === 2 ? "100vw" : "(max-width: 767px) 100vw, 65vw"}
                 style={{ objectFit: "cover", objectPosition: story.cover.position ?? "center" }}
               />
-              <span className="story-entry__view" aria-hidden="true">View</span>
+              <span className="story-entry__view" aria-hidden="true">Ver</span>
             </Link>
             <Link href={`/stories/${story.slug}`} className="story-entry__meta">
               <span className="story-entry__number">{story.number}</span>

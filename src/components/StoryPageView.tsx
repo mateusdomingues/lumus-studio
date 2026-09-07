@@ -49,7 +49,7 @@ export function StoryPageView({ story }: { story: Story }) {
         </div>
       </section>
       <section className="project-intro section-shell">
-        <p className="eyebrow">The story</p>
+        <p className="eyebrow">A história</p>
         <p className="display-type">{story.intro}</p>
       </section>
       <section className="project-gallery section-shell" aria-label={`Galeria ${story.title}`}>
@@ -60,11 +60,9 @@ export function StoryPageView({ story }: { story: Story }) {
         ))}
       </section>
       <Link className="next-story dark-section" href={`/stories/${nextStory.slug}`}>
-        <span className="eyebrow">Next story</span>
+        <span className="eyebrow">Próxima história</span>
         <strong className="display-type">{nextStory.title}</strong>
-        <span aria-hidden="true">↗</span>
       </Link>
     </main>
   );
 }
-

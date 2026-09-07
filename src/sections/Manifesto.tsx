@@ -31,7 +31,7 @@ export function Manifesto() {
 
   return (
     <section ref={rootRef} className="manifesto section-shell" aria-labelledby="manifesto-title">
-      <p className="eyebrow">Lumus Studio — Visual stories</p>
+      <p className="eyebrow">Lumus Studio — Narrativas visuais</p>
       <h1 id="manifesto-title" className="manifesto__title display-type">
         <span className="manifesto__line"><span>Eventos acontecem</span></span>
         <span className="manifesto__line"><span>uma vez. Imagens os</span></span>
@@ -43,4 +43,3 @@ export function Manifesto() {
     </section>
   );
 }
-

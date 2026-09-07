@@ -53,7 +53,7 @@ export const stories: Story[] = [
   {
     slug: "brand-experience",
     number: "01",
-    category: "Brand Experience",
+    category: "Experiência de marca",
     title: "Forma em movimento",
     location: "São Paulo",
     year: "2026",
@@ -87,13 +87,13 @@ export const stories: Story[] = [
   {
     slug: "concert-volume",
     number: "03",
-    category: "Concert",
+    category: "Show",
     title: "Volume presente",
     location: "São Paulo",
     year: "2026",
     intro:
       "O palco, o artista e o público registrados no instante em que som e movimento ocupam o mesmo espaço.",
-    cover: { src: "/images/concerts/performance.jpg", alt: "Performance musical vista por entre o público" },
+    cover: { src: "/images/concerts/performance.jpg", alt: "Apresentação musical vista por entre o público" },
     gallery: [
       { src: "/images/concerts/crowd-lights.jpg", alt: "Público diante de um palco iluminado" },
       { src: "/images/concerts/purple-stage.jpg", alt: "Show com iluminação violeta e mãos erguidas" },
@@ -103,7 +103,7 @@ export const stories: Story[] = [
   {
     slug: "wedding-gestures",
     number: "04",
-    category: "Wedding",
+    category: "Casamento",
     title: "Entre gestos",
     location: "São Paulo",
     year: "2026",
@@ -119,7 +119,7 @@ export const stories: Story[] = [
   {
     slug: "fifteen-passage",
     number: "05",
-    category: "Fifteen",
+    category: "15 anos",
     title: "Rito de passagem",
     location: "São Paulo",
     year: "2026",
@@ -135,31 +135,31 @@ export const stories: Story[] = [
 ];
 
 export const eventIndex = [
-  { number: "01", label: "Brand Events", image: heroSlides[3], href: "#brand-events" },
-  { number: "02", label: "Festivals", image: stories[1].cover, href: "/stories/festival-pulse" },
-  { number: "03", label: "Concerts", image: stories[2].cover, href: "/stories/concert-volume" },
-  { number: "04", label: "Weddings", image: stories[3].cover, href: "/stories/wedding-gestures" },
-  { number: "05", label: "Fifteen", image: stories[4].cover, href: "/stories/fifteen-passage" },
+  { number: "01", label: "Eventos de marca", image: heroSlides[3], href: "#brand-events" },
+  { number: "02", label: "Festivais", image: stories[1].cover, href: "/stories/festival-pulse" },
+  { number: "03", label: "Shows", image: stories[2].cover, href: "/stories/concert-volume" },
+  { number: "04", label: "Casamentos", image: stories[3].cover, href: "/stories/wedding-gestures" },
+  { number: "05", label: "15 anos", image: stories[4].cover, href: "/stories/fifteen-passage" },
 ];
 
 export const approachSteps = [
   {
     number: "01",
-    label: "Before",
+    label: "Antes",
     title: "Entender antes de registrar.",
-    body: "Briefing, contexto, ritmo do evento e intenção da marca orientam cada escolha visual.",
+    body: "Alinhamento, contexto, ritmo do evento e intenção da marca orientam cada escolha visual.",
     image: { src: "/images/studio/camera-detail.jpg", alt: "Câmera preparada antes de um evento" },
   },
   {
     number: "02",
-    label: "During",
+    label: "Durante",
     title: "Presença sem interrupção.",
     body: "Cobertura discreta, direção quando necessária e atenção constante à narrativa que acontece ao redor.",
     image: { src: "/images/studio/photographer.jpg", alt: "Fotógrafo trabalhando durante um evento" },
   },
   {
     number: "03",
-    label: "After",
+    label: "Depois",
     title: "Curadoria que dá sentido.",
     body: "Seleção, tratamento e sequência transformam registros isolados em uma história visual coerente.",
     image: { src: "/images/studio/overhead.jpg", alt: "Equipe revisando imagens captadas em um evento" },

@@ -12,7 +12,7 @@ export function EventsIndex() {
   return (
     <section className="events-index section-shell" aria-labelledby="events-title">
       <div className="events-index__header">
-        <p className="eyebrow">Events</p>
+        <p className="eyebrow">Eventos</p>
         <h2 id="events-title" className="display-type">A mesma atenção, em diferentes escalas.</h2>
       </div>
       <div className="events-index__body">
@@ -28,7 +28,7 @@ export function EventsIndex() {
               onMouseEnter={() => setActive(index)}
               onFocus={() => setActive(index)}
             >
-              <span>{item.number}</span><strong className="display-type">{item.label}</strong><i aria-hidden="true">↗</i>
+              <span>{item.number}</span><strong className="display-type">{item.label}</strong>
             </Link>
           ))}
         </nav>
@@ -36,4 +36,3 @@ export function EventsIndex() {
     </section>
   );
 }
-

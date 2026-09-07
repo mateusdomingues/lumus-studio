@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
-import { ArrowLink } from "@/components/ArrowLink";
 import { gsap } from "@/lib/gsap";
 import { siteConfig } from "@/data/site";
 

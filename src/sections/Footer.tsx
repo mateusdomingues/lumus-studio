@@ -9,17 +9,17 @@ export function Footer() {
         <p>{siteConfig.location}</p>
         <div>
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-          <a href={siteConfig.instagram} target="_blank" rel="noreferrer">Instagram ↗</a>
+          <a href={siteConfig.instagram} target="_blank" rel="noreferrer">Instagram</a>
         </div>
         <nav aria-label="Rodapé">
-          <Link href="#stories">Stories</Link>
-          <Link href="#brand-events">Brand Events</Link>
-          <Link href="#studio">Studio</Link>
+          <Link href="#stories">Histórias</Link>
+          <Link href="#brand-events">Eventos de marca</Link>
+          <Link href="#studio">Estúdio</Link>
         </nav>
       </div>
       <div className="site-footer__bottom">
         <span>© {new Date().getFullYear()} Lumus Studio</span>
-        <Link href="#top">Voltar ao início ↑</Link>
+        <Link href="#top">Voltar ao início</Link>
       </div>
     </footer>
   );

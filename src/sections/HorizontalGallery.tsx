@@ -46,7 +46,7 @@ export function HorizontalGallery() {
     <section ref={rootRef} className="horizontal-gallery" aria-label="Galeria editorial">
       <div ref={trackRef} className="horizontal-gallery__track">
         <header className="horizontal-gallery__intro">
-          <p className="eyebrow">Across the room</p>
+          <p className="eyebrow">Entre cenas</p>
           <h2 className="display-type">Tudo o que acontece entre um instante e outro.</h2>
         </header>
         {images.map((image) => (
@@ -58,4 +58,3 @@ export function HorizontalGallery() {
     </section>
   );
 }
-
