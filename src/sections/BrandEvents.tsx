@@ -7,14 +7,14 @@ import { gsap } from "@/lib/gsap";
 import { siteConfig } from "@/data/site";
 
 const services = [
-  "Product launches",
-  "Brand activations",
-  "Corporate experiences",
-  "Fashion events",
-  "Openings",
-  "Conferences",
-  "Private events",
-  "Experiential marketing",
+  "Lançamentos de produtos",
+  "Ativações de marca",
+  "Experiências corporativas",
+  "Eventos de moda",
+  "Inaugurações",
+  "Conferências",
+  "Eventos privados",
+  "Marketing de experiência",
 ];
 
 export function BrandEvents() {
@@ -45,7 +45,7 @@ export function BrandEvents() {
   return (
     <section ref={rootRef} id="brand-events" className="brand-events dark-section" aria-labelledby="brand-events-title">
       <div className="section-shell">
-        <p className="eyebrow">For brands</p>
+        <p className="eyebrow">Para marcas</p>
         <div className="brand-events__heading">
           <h2 id="brand-events-title" className="display-type">A experiência termina. A presença da marca continua.</h2>
           <p>
@@ -69,7 +69,12 @@ export function BrandEvents() {
               </span>
             ))}
           </div>
-          <ArrowLink href={`mailto:${siteConfig.email}`} invert>Conte sobre a experiência</ArrowLink>
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-opacity hover:opacity-70"
+          >
+            Conte sobre a experiência
+          </a>
         </div>
       </div>
     </section>

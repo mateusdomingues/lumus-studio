@@ -10,7 +10,12 @@ export function FinalCTA() {
       <div className="final-cta__content section-shell">
         <p className="eyebrow">Start a story</p>
         <h2 id="contact-title" className="display-type">Seu evento acontece uma vez.<br /><em>Faça permanecer.</em></h2>
-        <ArrowLink href={`mailto:${siteConfig.email}`} invert>Conte sobre o seu evento</ArrowLink>
+        <a
+          href={`mailto:${siteConfig.email}`}
+          className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-opacity hover:opacity-70"
+        >
+          Conte sobre o seu evento
+        </a>
       </div>
     </section>
   );
