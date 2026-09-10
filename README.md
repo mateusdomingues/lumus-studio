@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lumus Studio
 
-## Getting Started
+Site conceitual para um estúdio de fotografia e cobertura de eventos, criado para explorar narrativa visual, transições de página e uma experiência editorial responsiva.
 
-First, run the development server:
+[Ver projeto em produção](https://lumus-studio.vercel.app)
+
+## Objetivo
+
+Organizar diferentes tipos de eventos em uma experiência que valoriza as imagens sem perder clareza de navegação. Eventos de marca ocupam o centro da comunicação, enquanto festivais, shows, casamentos e festas de 15 anos são apresentados como histórias independentes.
+
+## Funcionalidades
+
+- Hero com sequência automática de fotografias
+- Portfólio dividido por categorias
+- Páginas dinâmicas para cada história
+- Galerias horizontais e seções cinematográficas
+- Animações acionadas pelo scroll
+- Navegação responsiva
+- Sitemap e robots gerados pela aplicação
+- Metadados e textos alternativos para imagens
+
+## Tecnologias
+
+- Next.js
+- React
+- TypeScript
+- GSAP
+- Tailwind CSS
+- Vercel
+
+## Arquitetura
+
+O conteúdo dos projetos fica centralizado em `src/data/projects.ts`. Cada história possui slug, categoria, capa e galeria. A rota `src/app/stories/[slug]` usa esses dados para montar as páginas individuais, evitando duplicação de estrutura.
+
+As seções da página inicial estão separadas em `src/sections`, os componentes compartilhados ficam em `src/components` e a configuração institucional em `src/data/site.ts`.
+
+## Decisões e desafios
+
+A principal decisão foi tratar as fotografias como parte da navegação, e não como simples elementos decorativos. As animações foram isoladas por seção para facilitar manutenção e controlar o ritmo da experiência.
+
+Também foi necessário equilibrar imagens grandes, transições e responsividade sem esconder a hierarquia do conteúdo.
+
+## Executar localmente
 
 ```bash
+git clone https://github.com/mateusdomingues/lumus-studio.git
+cd lumus-studio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para validar a versão de produção:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Observação
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este é um projeto de portfólio. As imagens utilizadas têm créditos documentados em `public/images/CREDITS.md`.
